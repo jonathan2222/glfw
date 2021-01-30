@@ -18,6 +18,12 @@ project "glfw"
 		"src/window.c"
 	}
 
+	-- Disable warnings
+	-- 4100: Unreferenced formal parameter
+	-- 4152: nonstandard extension, function/data pointer conversion in expression
+	-- 4244: conversion, possible loss of data
+	disablewarnings { "4100", "4152", "4244" }
+
 	filter "system:windows"
 		systemversion "latest"
 		staticruntime "On"
